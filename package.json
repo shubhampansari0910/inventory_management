@@ -1,0 +1,21 @@
+{
+  "name": "inventory-management",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run local",
+    "local": "export NODE_ENV=local && nodemon ./server.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "cookie-parser": "~1.4.4",
+    "custom-env": "^2.0.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.5",
+    "morgan": "~1.9.1",
+    "uuid": "^8.3.2"
+  }
+}
