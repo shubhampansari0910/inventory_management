@@ -4,6 +4,7 @@ const response = require('../constants/responseConstants')
 const _ = require('lodash')
 const { v4: uuidv4 } = require('uuid');
 
+
 module.exports = {
 
     createProduct: async (req, res) => {
@@ -12,6 +13,7 @@ module.exports = {
         if(!productDetails) return response.errorResponse(400, 'Bad Request')
 
         let product = await ProductMongoModel.create(productDetails)
+        console.logz
         if(!product) return response.errorResponse(500, 'Internal server Error');
         
         return response.successResponse(product);

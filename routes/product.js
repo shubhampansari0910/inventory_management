@@ -1,8 +1,9 @@
 let express = require('express');
 let router = express.Router();
 const productService = require('../services/product')
+const jwt = require('../services/middleware/jwt/jwt')
 
-
+router.use(jwt.authenticate);
 router.post('/create', async (req, res, next) => {
   let products = await productService.createProduct(req)
   res.status(200).json(products)

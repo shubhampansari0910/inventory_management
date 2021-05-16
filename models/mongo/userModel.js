@@ -1,25 +1,38 @@
 const mongoose = require('mongoose');
 
-const products = {
-    warehouseId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
-    productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
-    _id: false
-}
 const userSchema = new mongoose.Schema({
-    userName: {
+    name: {
         type: String,
-        default: ''
+        required:true
     },
-    products: [products],
     mobile: {
         type: String,
         required: true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    role:{
+        type:String,
+        enum:['admin','user'],
+        required:true
+    },
+    token:{
+        type:String,
+        default:""
+    },
+    otp:{
+        type:Number,
+        required:true
+    },
+    isVerified:{
+        type:String,
+        default:false
     }
 },
 {

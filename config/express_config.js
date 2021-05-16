@@ -9,6 +9,7 @@ APP.ObjectId = require('mongodb').ObjectID;
 let warehouseRouter = require('../routes/warehouse');
 let productRouter = require('../routes/product');
 let catalogRouter = require('../routes/catalog')
+const authRouter = require('../routes/auth');
 
 let app = express();
 
@@ -16,7 +17,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+app.use('/auth',authRouter);
 app.use('/warehouse', warehouseRouter);
 app.use('/product', productRouter);
 app.use('/catalog', catalogRouter);
